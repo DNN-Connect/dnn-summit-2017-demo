@@ -9,9 +9,15 @@ define(['jquery'], function ($) {
                     window.connect.demo.init(util, params);
                 },
             });
+            if (typeof callback === 'function') {
+                callback();
+            }
         },
         load: function (params, callback) {
             window.connect.demo.load(params);
+            if (typeof callback === 'function') {
+                callback();
+            }
         }
     };
 });
