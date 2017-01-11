@@ -11,4 +11,8 @@ export class DataService {
         const sf = this.getServiceFramework("Widget");
         sf.get("GetSetting", {}, success);
     }
+    public static setSetting(newValue: string, success: Function, fail: Function): any {
+        const sf = this.getServiceFramework("Widget");
+        sf.post("SetSetting", { newValue: newValue }, success, fail);
+    }
 }

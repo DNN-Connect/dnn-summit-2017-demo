@@ -28,6 +28,18 @@ export class MyComponent extends React.Component<IMyComponentProps, IMyComponent
         });
     }
 
+    onUpdate(e: any): void {
+        DataService.setSetting(this.state.Settings.MySetting, (data: string) => {
+            this.setState({
+                Settings: {
+                    MySetting: data
+                }
+            });
+        }, (error: any) => {
+            alert('Error saving');
+        });
+    }
+
     public render(): JSX.Element {
         return (
             <div className="container-fluid">
@@ -37,7 +49,7 @@ export class MyComponent extends React.Component<IMyComponentProps, IMyComponent
                         onChange={linkState(this, 'Settings', 'MySetting')} />
                 </div>
                 <div>
-                    <button className="btn btn-primary" type="submit">Update</button>
+                    <button className="btn btn-primary" type="submit" onClick={this.onUpdate.bind(this)}>Update</button>
                 </div>
             </div>            
         );
