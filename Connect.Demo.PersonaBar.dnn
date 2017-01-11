@@ -1,0 +1,33 @@
+<dotnetnuke type="Package" version="5.0">
+  <packages>
+    <package name="Connect.Demo.PersonaBar" type="PersonaBar" version="01.00.00">
+      <friendlyName>Connect.Demo.PersonaBar</friendlyName>
+      <description>Connect Demo PersonaBar Module</description>
+      <iconFile>~/DesktopModules/admin/Dnn.PersonaBar/images/module_icon_32x32.png</iconFile>
+      <owner>
+        <name>Peter Donker</name>
+        <organization>DNN Connect</organization>
+        <url>http://dnn-connect.org</url>
+        <email>no-reply@dnn-connect.org</email>
+      </owner>
+      <dependencies>
+        <dependency type="CoreVersion">08.00.00</dependency>
+        <dependency type="ManagedPackage" version="01.00.00">Dnn.PersonaBar.UI</dependency>
+      </dependencies>
+      <azureCompatible>true</azureCompatible>
+      <components>
+        <component type="PersonaBarMenu">
+          <menu>
+            <identifier>Connect.Demo</identifier>
+            <moduleName>Connect.Demo</moduleName>
+            <resourceKey>nav_Demo</resourceKey>
+            <path>Demo</path>
+            <mobileSupport>true</mobileSupport>
+            <parent>Settings</parent>
+            <order>2</order>
+          </menu>
+        </component>
+      </components>
+    </package>
+  </packages>
+</dotnetnuke>
