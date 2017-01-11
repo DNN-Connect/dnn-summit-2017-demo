@@ -9459,11 +9459,20 @@ var MyComponent = (function (_super) {
     __extends(MyComponent, _super);
     function MyComponent(props) {
         var _this = _super.call(this, props) || this;
-        _this.state = {};
+        _this.state = {
+            Settings: {
+                MySetting: ""
+            }
+        };
         return _this;
     }
     MyComponent.prototype.render = function () {
-        return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("span", null, "Hello from React"));
+        return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", { className: "container-fluid" },
+            __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", { className: "form-group" },
+                __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("label", null, "My Setting"),
+                __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("input", { type: "text", className: "form-control", value: this.state.Settings.MySetting })),
+            __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", null,
+                __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("button", { className: "btn btn-primary", type: "submit" }, "Update"))));
     };
     return MyComponent;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]));

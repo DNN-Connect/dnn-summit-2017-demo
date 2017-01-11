@@ -20,6 +20,16 @@ export class MyComponent extends React.Component<IMyComponentProps, IMyComponent
     }
 
     public render(): JSX.Element {
-        return (<span>Hello from React</span>);
+        return (
+            <div className="container-fluid">
+                <div className="form-group">
+                    <label>My Setting</label>
+                    <input type="text" className="form-control" value={this.state.Settings.MySetting} />
+                </div>
+                <div>
+                    <button className="btn btn-primary" type="submit">Update</button>
+                </div>
+            </div>            
+        );
     }
 }
