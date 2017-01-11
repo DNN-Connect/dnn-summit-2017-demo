@@ -9446,12 +9446,16 @@ module.exports = __webpack_require__(110);
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__LinkState__ = __webpack_require__(180);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Service__ = __webpack_require__(181);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return MyComponent; });
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
+
+
 
 ;
 ;
@@ -9464,13 +9468,20 @@ var MyComponent = (function (_super) {
                 MySetting: ""
             }
         };
+        __WEBPACK_IMPORTED_MODULE_2__Service__["a" /* DataService */].getSetting(function (data) {
+            _this.setState({
+                Settings: {
+                    MySetting: data
+                }
+            });
+        });
         return _this;
     }
     MyComponent.prototype.render = function () {
         return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", { className: "container-fluid" },
             __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", { className: "form-group" },
                 __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("label", null, "My Setting"),
-                __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("input", { type: "text", className: "form-control", value: this.state.Settings.MySetting })),
+                __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("input", { type: "text", className: "form-control", value: this.state.Settings.MySetting, onChange: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__LinkState__["a" /* linkState */])(this, 'Settings', 'MySetting') })),
             __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", null,
                 __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("button", { className: "btn btn-primary", type: "submit" }, "Update"))));
     };
@@ -21744,6 +21755,55 @@ window.connect.demo.load = function (params) {
 };
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(82)))
+
+/***/ },
+/* 180 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ exports["a"] = linkState;
+function createHandler(component, key, property) {
+    return function (e) {
+        var el = e.target;
+        var value = el.type === 'checkbox' ? el.checked : el.value;
+        var obj = component.state[key];
+        obj[property] = value;
+        component.setState((_a = {},
+            _a[key] = obj,
+            _a));
+        var _a;
+    };
+}
+function linkState(component, key, property) {
+    return createHandler(component, key, property);
+}
+;
+
+
+/***/ },
+/* 181 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return DataService; });
+var DataService = (function () {
+    function DataService() {
+    }
+    ;
+    DataService.getServiceFramework = function (controller) {
+        var sf = window.connect.demo.util.sf;
+        sf.moduleRoot = "PersonaBar";
+        sf.controller = controller;
+        return sf;
+    };
+    DataService.getSetting = function (success) {
+        var sf = this.getServiceFramework("Widget");
+        sf.get("GetSetting", {}, success);
+    };
+    return DataService;
+}());
+
+
 
 /***/ }
 /******/ ]);
