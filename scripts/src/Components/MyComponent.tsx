@@ -1,8 +1,11 @@
 import * as React from "react";
+import { ISettings } from "../Models/ISettings";
 
 interface IMyComponentProps {};
 
-interface IMyComponentState {};
+interface IMyComponentState {
+    Settings: ISettings;
+};
 
 export class MyComponent extends React.Component<IMyComponentProps, IMyComponentState> {
     refs: {
@@ -10,6 +13,9 @@ export class MyComponent extends React.Component<IMyComponentProps, IMyComponent
     constructor(props: IMyComponentProps) {
         super(props);
         this.state = {
+            Settings: {
+                MySetting: ""
+            }
         }
     }
 
