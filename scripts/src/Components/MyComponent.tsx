@@ -35,6 +35,7 @@ export class MyComponent extends React.Component<IMyComponentProps, IMyComponent
                     MySetting: data
                 }
             });
+            (window as any).connect.demo.util.closePersonaBar();
         }, (error: any) => {
             alert('Error saving');
         });

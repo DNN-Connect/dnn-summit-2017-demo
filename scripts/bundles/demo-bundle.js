@@ -9485,6 +9485,7 @@ var MyComponent = (function (_super) {
                     MySetting: data
                 }
             });
+            window.connect.demo.util.closePersonaBar();
         }, function (error) {
             alert('Error saving');
         });
