@@ -1,0 +1,22 @@
+{
+  "name": "demo",
+  "version": "01.00.00",
+  "description": "Demo personabar extension for DNN",
+  "scripts": {
+    "build": "node_modules\\.bin\\webpack",
+    "watch": "node_modules\\.bin\\webpack --watch"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "bootstrap": "^3.3.7",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "ts-loader": "^1.3.3",
+    "ts-node": "^1.7.2",
+    "typescript": "^2.1.4",
+    "typings": "^2.1.0",
+    "webpack": "^2.1.0-beta.27"
+  },
+  "dependencies": {}
+}
