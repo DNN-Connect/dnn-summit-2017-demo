@@ -1,0 +1,13 @@
+@inherits DemoWebPage
+@using Connect.DNN.Modules.Demo.Common;
+
+<h1>Hello Connect Demo</h1>
+
+<dl class="dl-horizontal">
+    <dt>View</dt>
+    <dd>@DemoModuleContext.Settings.View</dd>
+    <dt>MySetting</dt>
+    <dd>@DemoModuleContext.Settings.MySetting</dd>
+    <dt>This page loaded</dt>
+    <dd>@System.DateTime.Now.ToString("u")</dd>
+</dl>
